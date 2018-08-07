@@ -7,69 +7,116 @@
 	<meta name='format-detection' content='telephone=no'>
 	<link rel='stylesheet' type='text/css' href='css/style.css'>
 </head>
-<body>
+<body class="maxservice">
 	<header class='header'>
-		<div class='header__location wrapper'><span>Наши контакты по</span> 
-			<button class='header__location-button button-reset' type='button' data-tab='city:brest'>Бресту</button>
-			<button class='header__location-button button-reset' type='button' data-tab='city:minsk'>Минску</button>
+		<div class='header__location wrapper only-mobile'><span>Наши контакты по</span> 
+			<button class='header__location-button btn-reset' type='button' data-tab='city:brest'>Бресту</button>
+			<button class='header__location-button btn-reset' type='button' data-tab='city:minsk'>Минску</button>
 			<div class='header__phones-tab' data-tab='city:brest'>
-				<ul class='header__phones wrapper'>
-					<li>
+				<ul class='header__phones ul-reset wrapper'>
+					<li class="header__phones-item">
 						<a class='header__phone header__phone-velcom' href='tel:+375296901122'>+375 (29) 690-11-22</a>
 					</li>
-					<li>
+					<li class="header__phones-item">
 						<a class='header__phone header__phone-mts' href='tel:+375336901122'>+375 (33) 690-11-22</a>
 					</li>
-					<li>
+					<li class="header__phones-item">
 						<a class='header__phone header__phone-landline' href='tel:+375162555055'>+375 (162) 55-50-55</a>
 					</li>
 				</ul>
 				<div class='header__work-time wrapper'>С 9:00 до 21:00 без выходных</div>
 			</div>
 			<div class='header__phones-tab' data-tab='city:minsk'>
-				<ul class='header__phones wrapper' >
-					<li>
+				<ul class='header__phones ul-reset wrapper' >
+					<li class="header__phones-item">
 						<a class='header__phone header__phone-velcom' href='tel:+375296901188'>+375 (29) 690-11-88</a>
 					</li>
-					<li>
+					<li class="header__phones-item">
 						<a class='header__phone header__phone-mts' href='tel:+375336901188'>+375 (33) 690-11-88</a>
 					</li>
-					<li>
+					<li class="header__phones-item">
 						<a class='header__phone header__phone-landline' href='tel:+375173453351'>+375 (17) 345-33-51</a>
 					</li>
 				</ul>
 				<div class='header__work-time wrapper'>С 9:00 до 21:00 без выходных</div>
 			</div>
 		</div>
+		<div class='header__information wrapper only-desktop'>
+			<div class='header__information-tel'>
+				<span class='header__phones-city'>Брест:</span>
+				<ul class='header__phones ul-reset'>
+					<li class="header__phones-item">
+						<a class='header__phone header__phone-velcom' href='tel:+375296901122'>+375 (29) 690-11-22</a>
+					</li>
+					<li class="header__phones-item">
+						<a class='header__phone header__phone-mts' href='tel:+375336901122'>+375 (33) 690-11-22</a>
+					</li>
+					<li class="header__phones-item">
+						<a class='header__phone header__phone-landline' href='tel:+375162555055'>+375 (162) 55-50-55</a>
+					</li>
+				</ul>
+			</div>
+			<div class='header__information-tel'>
+				<span class='header__phones-city'>Минск:</span>
+				<ul class='header__phones ul-reset'>
+					<li class="header__phones-item">
+						<a class='header__phone header__phone-velcom' href='tel:+375296901188'>+375 (29) 690-11-88</a>
+					</li>
+					<li class="header__phones-item">
+						<a class='header__phone header__phone-mts' href='tel:+375336901188'>+375 (33) 690-11-88</a>
+					</li>
+					<li class="header__phones-item">
+						<a class='header__phone header__phone-landline' href='tel:+375173453351'>+375 (17) 345-33-51</a>
+					</li>
+				</ul>
+			</div>
+			<div class='header__work-time'><b class="header__work-time-interval">С 9:00 до 21:00</b>без выходных</div>
+			<button type='button' class='btn header__feedback' data-modal='feedback'>Заказать звонок</button>
+		</div>
 		<div class='header__panel'>
-			<button class='hamburger button-reset' type='button'></button>
-			<a href='index.html' class='header__logo a-reset'><span>Сервис по замене автостекол</span></a>
-			<button class='header__search-button button-reset' type='button' data-modal='search'></button>
+			<button class='hamburger btn-reset only-mobile' type='button'></button>
+			<a href='index.html' class='header__logo a-reset'><span class="header__logo-text">Сервис по замене автостекол</span></a>
+			<button class='header__search-button btn-reset only-mobile' type='button' data-modal='search'></button>
 			<div class='header__menu'>
 				<ul class='header__menu-list ul-reset'>
-					<li><a class='a-reset wrapper' href=''>Каталог</a></li>
-					<li><a class='a-reset wrapper' href=''>Услуги</a></li>
-					<li><a class='a-reset wrapper' href=''>Галерея</a></li>
-					<li><a class='a-reset wrapper' href=''>О компании</a></li>
-					<li><a class='a-reset wrapper' href=''>Схема проезда</a></li>
+					<li class="header__menu-item"><a class='a-reset header__menu-item-link' href=''>Каталог</a></li>
+					<li class="header__menu-item"><a class='a-reset header__menu-item-link' href=''>Услуги</a></li>
+					<li class="header__menu-item"><a class='a-reset header__menu-item-link' href=''>Галерея</a></li>
+					<li class="header__menu-item"><a class='a-reset header__menu-item-link' href=''>О компании</a></li>
+					<li class="header__menu-item"><a class='a-reset header__menu-item-link' href=''>Схема проезда</a></li>
 				</ul>
-				<div class='header__work-time wrapper'>С 9:00 до 21:00 без выходных</div>
+				<div class='header__work-time wrapper only-mobile'>С 9:00 до 21:00 без выходных</div>
 			</div>
-			<button class='btn feedback' type='button' data-modal='feedback'>Заказать звонок</button>
-			<form class='modal modal-search wrapper'>
-				<input type='search' name='search' placeholder='Поиск...' class='modal-search__input'>
-				<input type='submit' class='modal-search__submit input-submit-reset' value=''>
-				<button class='modal-close button-reset' type='button'></button>
+			<form class='search-form only-desktop'>
+				<input type='search' name='search' placeholder='Поиск...' class='header__search-input'>
+				<input type='submit' class='search-submit input-submit-reset' value=''>
 			</form>
+			<button class='btn feedback only-mobile' type='button' data-modal='feedback'>Заказать звонок</button>
+			<div class='modal modal-search wrapper'>
+				<form class="search-form">
+					<input type='search' name='search' placeholder='Поиск...' class='modal-search__input'>
+					<input type='submit' class='search-submit input-submit-reset' value=''>
+					<button class='modal-close btn-reset' type='button'></button>
+				</form>
+			</div>
 			<form class='modal modal-feedback wrapper'>
 				<b class='modal__title'>Оставьте свое имя и номер телефона, чтобы заказать звонок</b>
 				<input type='text' name='name' placeholder='Введите имя' class='modal-feedback__name'>
 				<input type='tel' name='tel' placeholder='Введите номер телефона' class='modal-feedback__tel'>
 				<input type='submit' class='modal-feedback__submit input-submit-reset' value='Заказать звонок'>
-				<button class='modal-close button-reset' type='button'></button>
+				<button class='modal-close btn-reset' type='button'></button>
 			</form>
 		</div>
 	</header>
+	<main>
+		<section class='types'></section>
+		<section class='installation'></section>
+		<section class='scheme'></section>
+		<section class='sentence'></section>
+		<section class='partners'></section>
+		<section class='map'></section>
+	</main>
+	<footer></footer>
 	<div class='overlay'></div>
 	<script src='js/script.js'></script>
 </body>
