@@ -100,16 +100,46 @@
 				</form>
 			</div>
 			<form class='modal modal-feedback wrapper'>
-				<b class='modal__title'>Оставьте свое имя и номер телефона, чтобы заказать звонок</b>
-				<input type='text' name='name' placeholder='Введите имя' class='modal-feedback__name'>
-				<input type='tel' name='tel' placeholder='Введите номер телефона' class='modal-feedback__tel'>
-				<input type='submit' class='modal-feedback__submit input-submit-reset' value='Заказать звонок'>
+				<b class='feedback__title'>Оставьте свое имя и номер телефона, чтобы заказать звонок</b>
+				<input type='text' name='name' placeholder='Введите имя' class='feedback__name'>
+				<input type='tel' name='tel' placeholder='Введите номер телефона' class='feedback__tel'>
+				<button class='feedback__submit input-submit-reset'>Заказать звонок</button>
 				<button class='modal-close btn-reset' type='button'></button>
 			</form>
 		</div>
 	</header>
 	<main>
-		<section class='types'></section>
+		<section class='types'>
+			<div class="wrapper overfade clearfix">
+				<div class="types__content">
+					<h1 class="main-title">Замена автостекол в Бресте и Минске!</h1>
+					<div class='types__auto'>
+						<div class="types__auto-item">
+							<img src="img/B.png" class="types__auto-item-image">
+							<span class="types__auto-item-text">Для легковых<br>автомобилей</span>
+						</div>
+						<div class="types__auto-item">
+							<img src="img/C.png" class="types__auto-item-image">
+							<span class="types__auto-item-text">Для грузовых<br>автомобилей</span>
+						</div>
+						<div class="types__auto-item">
+							<img src="img/E.png" class="types__auto-item-image types__auto-item-image_offset">
+							<span class="types__auto-item-text">Для<br>спецтехники</span>
+						</div>
+						<div class="types__auto-item">
+							<img src="img/D.png" class="types__auto-item-image">
+							<span class="types__auto-item-text">Для<br>автобусов</span>
+						</div>
+					</div>
+				</div>
+				<form class='feedback wrapper only-desktop'>
+					<b class='feedback__title'>Оставьте заявку и<br>получите консультацию<br>бесплатно</b>
+					<input type='text' name='name' placeholder='Введите имя' class='feedback__name'>
+					<input type='tel' name='tel' placeholder='Введите номер телефона' class='feedback__tel'>
+					<button class='feedback__submit input-submit-reset'>Заказать звонок</button>
+				</form>
+			</div>
+		</section>
 		<section class='installation'></section>
 		<section class='scheme'></section>
 		<section class='sentence'></section>
