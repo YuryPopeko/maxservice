@@ -12,12 +12,12 @@
 		<div class='header__location wrapper only-mobile'>
 			<span>Наши контакты по</span> 
 			<button
-				class='header__location-button btn-reset'
+				class='header__location-button'
 				type='button' data-tab='city:brest'>
 				Бресту
 			</button>
 			<button
-				class='header__location-button btn-reset'
+				class='header__location-button'
 				type='button'
 				data-tab='city:minsk'>
 				Минску
@@ -157,7 +157,7 @@
 		</div>
 		<div class='header__panel'>
 			<button
-				class='hamburger btn-reset only-mobile'
+				class='hamburger only-mobile'
 				type='button'>
 			</button>
 			<a
@@ -167,7 +167,7 @@
 					Сервис по замене автостекол
 				</span>
 			</a>
-			<button class='header__search-button btn-reset only-mobile'
+			<button class='header__search-button only-mobile'
 				type='button'
 				data-modal='search'
 				onclick='searchField.focus()'>
@@ -244,7 +244,7 @@
 						class='search-submit input-submit-reset'
 						value=''>
 					<button
-						class='modal-close btn-reset'
+						class='modal-close'
 						type='button'>
 					</button>
 				</form>
@@ -268,7 +268,7 @@
 					Заказать звонок
 				</button>
 				<button
-					class='modal-close btn-reset'
+					class='modal-close'
 					type='button'>
 				</button>
 			</form>
@@ -361,7 +361,9 @@
 			</div>
 		</div>
 		<section class='sentences wrapper'>
-			<div class='sentences__item'>
+			<a
+				href=''
+				class='sentences__item'>
 				<img
 					src='img/sentences__image-1.jpg'
 					class='sentences__image'>
@@ -369,8 +371,10 @@
 					<b class='sentences__title'>Распродажа. Цены снижены</b>
 					<p class='sentences__text'>Стоимость установки стекла от 22 рублей. Найдете где-то дешевле, мы предложим еще дешевле.</p>
 				</div>
-			</div>
-			<div class='sentences__item'>
+			</a>
+			<a
+				href=''
+				class='sentences__item'>
 				<img
 					src='img/sentences__image-2.jpg'
 					class='sentences__image'>
@@ -378,8 +382,10 @@
 					<b class='sentences__title'>Бесплатная заправка кондиционера</b>
 					<p class='sentences__text'>При замене стекла в автомобиле заправка кондиционера бесплатно!</p>
 				</div>
-			</div>
-			<div class='sentences__item'>
+			</a>
+			<a
+				href=''
+				class='sentences__item'>
 				<img
 					src='img/sentences__image-3.jpg'
 					class='sentences__image'>
@@ -388,7 +394,9 @@
 					<p class='sentences__text'>Для юридических лиц проводится бессрочная Акция: каждая девятая замена стекла - бесплатно!</p>
 				</div>
 			</div>
-			<div class='sentences__item'>
+			<a
+				href=''
+				class='sentences__item'>
 				<img
 					src='img/sentences__image-4.jpg'
 					class='sentences__image'>
@@ -396,49 +404,80 @@
 					<b class='sentences__title'>Скидка для такси и маршруток</b>
 					<p class='sentences__text'>Внимание! Победителем розыгрыша и обладателем навигатора становится участник №19.</p>
 				</div>
-			</div>
+			</a>
 		</section>
 		<section class='advanced-search wrapper'>
 			<h2 class='advanced-search__title'>Каталог лобовых стекол</h2>
-			<form>
+			<form class="advanced-search__form">
 				<label>
-					Марка автомобиля:
-					<select>
+					<span class="advanced-search__label">Марка автомобиля:</span>
+					<select class="advanced-search__select">
 						<option>Все</option>
 					</select>
 				</label>
 				<label>
-					Модель:
-					<select>
+					<span class="advanced-search__label">Модель:</span>
+					<select class="advanced-search__select">
 						<option>Все</option>
 					</select>
 				</label>
 				<label>
-					Тип кузова:
-					<select>
+					<span class="advanced-search__label">Тип кузова:</span>
+					<select class="advanced-search__select">
 						<option>Все</option>
 					</select>
 				</label>
-				<button>Подобрать</button>
+				<button class="advanced-search__button">Подобрать</button>
 			</form>
-			<span>Нет времени искать? Оставьте заявку и мы перезвоним</span>
-			<form>
+			<form class="advanced-search__form">
+				<span class="advanced-search__form-text">Нет времени искать? Оставьте заявку и мы перезвоним</span>
 				<label>
-					Имя:
+					<span class="advanced-search__label">Имя:</span>
 					<input
 						type="text"
 						name="name"
-						placeholder="Ваше имя">
+						placeholder="Ваше имя"
+						class="advanced-search__field">
 				</label>
 				<label>
-					Телефон:
+					<span class="advanced-search__label">Телефон:</span>
 					<input
 						type="tel"
 						name="tel"
-						placeholder="+375">
+						placeholder="+375"
+						class="advanced-search__field">
 				</label>
-				<button>Перезвоним за минуту</button>
+				<button class="advanced-search__button">Перезвоним за минуту</button>
 			</form>
+		</section>
+		<section class='choose-us wrapper'>
+			<h2 class='choose-us__title'>Почему выбирают нас?</h2>
+			<div class='choose-us__container'>
+				<div class='choose-us__item'>
+					<div class="choose-us__item-icon icon-currency"></div>
+					<p class="choose-us__item-text">Цены на установку<br>включены в стоимость</p>
+				</div>
+				<div class='choose-us__item'>
+					<div class="choose-us__item-icon icon-time"></div>
+					<p class="choose-us__item-text">Работаем без выходных,<br>с 9 до 21 часа</p>
+				</div>
+				<div class='choose-us__item'>
+					<div class="choose-us__item-icon icon-glue"></div>
+					<p class="choose-us__item-text">Используем только<br>швейцарские клеи SIKA</p>
+				</div>
+				<div class='choose-us__item'>
+					<div class="choose-us__item-icon icon-shield"></div>
+					<p class="choose-us__item-text">Гарантия 12 месяцев<br>на все виды стекол</p>
+				</div>
+				<div class='choose-us__item'>
+					<div class="choose-us__item-icon icon-discount"></div>
+					<p class="choose-us__item-text">Множество скидок для<br>юридических лиц</p>
+				</div>
+				<div class='choose-us__item'>
+					<div class="choose-us__item-icon icon-truck"></div>
+					<p class="choose-us__item-text">Работаем на выезд по<br>Бресту и Минску</p>
+				</div>
+			</div>
 		</section>
 		<section class='scheme'>
 		</section>
