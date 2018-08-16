@@ -71,8 +71,8 @@ function toggleScheme(elem) {
 }
 
 
-var brest = {lat: 52.09762139999999, lng: 23.734050300000035},
-		minsk = {lat: 53.90453979999999, lng: 27.561524400000053};
+var brest = {lat: 52.14440399999999, lng: 23.661027500000046},
+		minsk = {lat: 53.8495925, lng: 27.67065930000001};
 
 function initMap() {
 
@@ -80,6 +80,9 @@ function initMap() {
 		center: brest,
 		zoom: 12
 	});
+
+	var markerBrest = new google.maps.Marker({position: brest, map: map}),
+			markerMinsk = new google.maps.Marker({position: minsk, map: map});
 
 	document.querySelector('.map__toggle').addEventListener('click', function(e) {
 
