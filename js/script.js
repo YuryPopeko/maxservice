@@ -5,13 +5,17 @@ document.addEventListener('click', (e) => {
 
 	if (target.closest('button[data-tab]')) toggleTab(target.closest('button[data-tab]'))
 
-	if (target.closest('button[data-modal]')) openModal(target.closest('button[data-modal]'))
+	else if (target.closest('button[data-modal]')) openModal(target.closest('button[data-modal]'))
 
-	if (target.closest('.modal-close') || target.closest('.overlay')) closeModal()
+	else if (target.closest('.modal-close') || target.closest('.overlay')) closeModal()
 
-	if (target.closest('.hamburger')) toggleHeaderMenu()
+	else if (target.closest('.hamburger')) toggleHeaderMenu()
 
-	if (target.closest('.scheme__item')) toggleScheme(target.closest('.scheme__item'))
+	else if (target.closest('.scheme__item')) toggleScheme(target.closest('.scheme__item'))
+
+	else if (target.closest('.accordion__btn')) toggleAccordion(target.closest('.accordion__btn'))
+
+	else if (target.closest('.go-back')) history.back()
 
 });
 
@@ -70,7 +74,6 @@ function toggleScheme(elem) {
 
 }
 
-
 var brest = {lat: 52.14440399999999, lng: 23.661027500000046},
 		minsk = {lat: 53.8495925, lng: 27.67065930000001};
 
@@ -98,5 +101,29 @@ function initMap() {
 	})
 
 }
+
+function toggleAccordion(accordionBtn) {
+
+	accordionBtn.classList.toggle('accordion__btn_active');
+	const accordionContent = accordionBtn.parentElement.querySelector('.accordion__content');
+	if (accordionContent.style.maxHeight) {
+		accordionContent.style.maxHeight = null;
+	} else {
+		accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+	} 
+
+}
+
+(() => { // открыть активные аккордионы
+
+	const accordionBtnActive = document.querySelectorAll('.accordion__btn_active');
+	if (!accordionBtnActive.length) return;
+
+	accordionBtnActive.forEach(item => {
+		const accordionContent = item.parentElement.querySelector('.accordion__content');
+		accordionContent.style.maxHeight = accordionContent.scrollHeight + "px"
+	})
+
+})();
 
 // console.log();
