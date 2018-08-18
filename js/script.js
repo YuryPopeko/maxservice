@@ -87,7 +87,10 @@ function initMap() {
 	var markerBrest = new google.maps.Marker({position: brest, map: map}),
 			markerMinsk = new google.maps.Marker({position: minsk, map: map});
 
-	document.querySelector('.map__toggle').addEventListener('click', function(e) {
+	const mapToggle = document.querySelector('.map__toggle');
+	if (!mapToggle) return;
+	
+	mapToggle.addEventListener('click', function(e) {
 
 		e = e || window.event;
 		const target = e.target;

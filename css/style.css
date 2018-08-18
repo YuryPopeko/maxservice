@@ -1150,6 +1150,19 @@ a[href^=tel] {
 .contacts__scheme-text {
 	color: var(--text-gray)
 }
+.contacts__map {
+	height: 480px
+}
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}
 
 @media(min-width: 768px) {
 	.only-mobile {
@@ -1575,6 +1588,7 @@ a[href^=tel] {
 	.contacts__info {
 		display: flex;
 		box-shadow: 0 0 35px 0 rgba(8, 10, 14, .2);
+		margin-bottom: 30px
 	}
 	.contacts__info-block {
 		padding: 40px 35px;
@@ -1590,7 +1604,35 @@ a[href^=tel] {
 		margin-bottom: 10px;
 	}
 	.breadcrumb {
-		margin-bottom: 30px;
+		margin-bottom: 30px
+	}
+	.contacts__map-container {
+		width: calc(50% - 7px);
+		float: left;
+		padding-bottom: 30px
+	}
+	.contacts__transit {
+		width: calc(50% - 7px);
+		float: right;
+		padding-bottom: 30px
+	}
+	.contacts__transit-img-container {
+		position: relative;
+		height: 480px
+	}
+	.contacts__transit-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.contacts__transit-tip {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: var(--darkblue-button);
+		padding: 20px 30px;
+		color: white;
+		font-size: 18px
 	}
 }
 
@@ -1940,5 +1982,8 @@ a[href^=tel] {
 	}
 	.contacts__info-block:not(:first-of-type) {
 		padding-top: 15px
+	}
+	.contacts__map {
+		margin-bottom: 10px
 	}
 }
