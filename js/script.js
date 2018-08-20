@@ -17,6 +17,8 @@ document.addEventListener('click', (e) => {
 
 	else if (target.closest('.go-back')) history.back()
 
+	else if (target.closest('.contacts__btn[data-city]')) toggleContacts(target.closest('.contacts__btn[data-city]'))
+
 });
 
 function toggleTab(button) {
@@ -74,34 +76,36 @@ function toggleScheme(elem) {
 
 }
 
-var brest = {lat: 52.14440399999999, lng: 23.661027500000046},
-		minsk = {lat: 53.8495925, lng: 27.67065930000001};
+var coords = {
+	brest: {lat: 52.14440399999999, lng: 23.661027500000046},
+	minsk: {lat: 53.8495925, lng: 27.67065930000001}
+}
 
 function initMap() {
 
 	map = new google.maps.Map(document.getElementById('map'), {
-		center: brest,
+		center: coords.brest,
 		zoom: 12
 	});
 
-	var markerBrest = new google.maps.Marker({position: brest, map: map}),
-			markerMinsk = new google.maps.Marker({position: minsk, map: map});
+	var markerBrest = new google.maps.Marker({position: coords.brest, map: map}),
+			markerMinsk = new google.maps.Marker({position: coords.minsk, map: map});
 
-	const mapToggle = document.querySelector('.map__toggle');
-	if (!mapToggle) return;
-	
-	mapToggle.addEventListener('click', function(e) {
+	const mapToggle = document.querySelector('.city-toggle');
+	if (mapToggle) {
+		mapToggle.addEventListener('click', function(e) {
 
-		e = e || window.event;
-		const target = e.target;
-		const btn = target.closest('.map__btn');
+			e = e || window.event;
+			const target = e.target;
+			const btn = target.closest('[data-city]');
 
-		if (!btn || btn.classList.contains('map__btn_active')) return;
-		this.querySelector('.map__btn_active').classList.remove('map__btn_active');
-		map.setCenter(window[btn.dataset.city]);
-		btn.classList.add('map__btn_active')
+			if (!btn || btn.classList.contains('city-toggle__btn_active')) return;
+			this.querySelector('.city-toggle__btn_active').classList.remove('city-toggle__btn_active');
+			map.setCenter(window.coords[btn.dataset.city]);
+			btn.classList.add('city-toggle__btn_active')
 
-	})
+		})
+	}
 
 }
 
@@ -128,5 +132,13 @@ function toggleAccordion(accordionBtn) {
 	})
 
 })();
+
+function toggleContacts(btn) {
+
+	const city = btn.dataset.city;
+
+	document.querySelector('.contacts').dataset.city = city
+
+}
 
 // console.log();

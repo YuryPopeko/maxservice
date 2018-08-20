@@ -31,22 +31,25 @@
 			</li>
 		</ul>
 		<h1 class="page-title">Контакты</h1>
-		<section class="contacts clearfix">
+		<section class="contacts clearfix" data-city='brest'>
 			<div class="contacts__info">
 				<div class="contacts__info-block">
 					<b class="contacts__info-title">Выберите город</b>
-					<button type="button" class="contacts__info-btn contacts__info-btn_active" data-city="brest">Брест</button>
-					<button type="button" class="contacts__info-btn" data-city="minsk">Минск</button>
+					<div class="city-toggle">
+						<button type="button" class="contacts__btn city-toggle__btn_active" data-city="brest">Брест</button>
+						<button type="button" class="contacts__btn" data-city="minsk">Минск</button>
+					</div>
 				</div>
 				<div class="contacts__info-block">
 					<b class="contacts__address-title">Адрес:</b>
-					<address class="contacts__address">г.Брест, улица Катин Бор, 7-ой км трассы М1/Е30, д. 99Б/7</address>
+					<address class="contacts__address" data-city='brest'>г.Брест, улица Катин Бор, 7-ой км трассы М1/Е30, д. 99Б/7</address>
+					<address class="contacts__address" data-city='minsk'>г. Минск, ул. Машиностроителей, 32</address>
 					<b class="contacts__work-time-title">Время работы:</b>
 					<span class="contacts__work-time">Пн-Вс 09:00—21:00</span>
 				</div>
 				<div class="contacts__info-block">
 					<b class="contacts__phone-title">Телефон:</b>
-					<ul class="ul-reset">
+					<ul class="ul-reset" data-city='brest'>
 						<li>
 							<a
 								class="phone phone-velcom"
@@ -69,10 +72,35 @@
 							</a>
 						</li>
 					</ul>
+					<ul class="ul-reset" data-city='minsk'>
+						<li>
+							<a
+								class="phone phone-velcom"
+								href="tel:+375296901188">
+								+375 (29) 690-11-88
+							</a>
+						</li>
+						<li>
+							<a
+								class="phone phone-mts"
+								href="tel:+375336901188">
+								+375 (33) 690-11-88
+							</a>
+						</li>
+						<li>
+							<a
+								class="phone phone-landline"
+								href="tel:+375173453351">
+								+375 (17) 345-33-51
+							</a>
+						</li>
+					</ul>
 				</div>
 				<div class="contacts__info-block">
-					<img src="img/contacts__scheme.jpg" class="contacts__scheme-img">
-					<small class="contacts__scheme-text">GPS координаты сервиса в Бресте: N 52.14108 E 23.6576</small>
+					<img src="img/contacts__scheme-brest.jpg" class="contacts__scheme-img" data-city='brest'>
+					<img src="img/contacts__scheme-minsk.jpg" class="contacts__scheme-img" data-city='minsk'>
+					<small class="contacts__scheme-text" data-city='brest'>GPS координаты сервиса в Бресте: N 52.14108 E 23.6576</small>
+					<small class="contacts__scheme-text" data-city='minsk'>GPS координаты сервиса в Бресте: N 53.849940 E 27.669931</small>
 				</div>
 			</div>
 			<div class="contacts__map-container">
@@ -84,8 +112,10 @@
 			<div class="contacts__transit only-desktop">
 				<h2 class="page-title">Проезд по территории:</h2>
 				<div class="contacts__transit-img-container">
-					<img src="img/contacts__transit-brest.jpg" class="contacts__transit-img">
-					<p class="contacts__transit-tip">Комментарий к карте, по типу: Въезд с улицы Софийской, за дизель сервисом Bosch и шиномонтажем. Можно делать в 3 строки. Плашка фиксирована</p>
+					<img src="img/contacts__transit-brest.jpg" class="contacts__transit-img" data-city='brest'>
+					<img src="img/contacts__transit-minsk.jpg" class="contacts__transit-img" data-city='minsk'>
+					<p class="contacts__transit-tip" data-city='brest'>Комментарий к карте, по типу: Въезд с улицы Софийской, за дизель сервисом Bosch и шиномонтажем. Можно делать в 3 строки. Плашка фиксирована</p>
+					<p class="contacts__transit-tip" data-city='minsk'>Гуси</p>
 				</div>
 			</div>
 		</section>
