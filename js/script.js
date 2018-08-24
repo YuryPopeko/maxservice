@@ -1,6 +1,35 @@
+// closest polyfill
+(() => {
+
+	if (!Element.prototype.closest) {
+
+		Element.prototype.closest = function(css) {
+			var node = this;
+
+			while (node) {
+				if (node.matches(css)) return node;
+				else node = node.parentElement;
+			}
+			return null;
+		};
+	}
+})();
+// matches polyfill
+(() => {
+
+	if (!Element.prototype.matches) {
+
+		Element.prototype.matches = Element.prototype.matchesSelector ||
+			Element.prototype.webkitMatchesSelector ||
+			Element.prototype.mozMatchesSelector ||
+			Element.prototype.msMatchesSelector
+
+	}
+})();
+
+
 document.addEventListener('click', (e) => {
 
-	e = e || window.event;
 	const target = e.target;
 
 	if (target.closest('button[data-tab]')) toggleTab(target.closest('button[data-tab]'))
@@ -83,7 +112,7 @@ var coords = {
 
 function initMap() {
 
-	map = new google.maps.Map(document.getElementById('map'), {
+	const map = new google.maps.Map(document.getElementById('map'), {
 		center: coords.brest,
 		zoom: 12
 	});
