@@ -1052,7 +1052,7 @@ a[href^=tel] {
 	margin-bottom: 20px
 }
 .glass-collection__item {
-	width: 280px;
+	width: calc((100% / 3) - 10px);
 	height: 360px;
 	padding: 20px 15px 30px 15px;
 	text-align: center;
@@ -1326,6 +1326,30 @@ main {
 .city-toggle__btn_active {
 	background-color: rgb(65, 75, 101);
 	color: white;
+}
+.modal__modal-success {
+	top: 50%;
+	left: 50%;
+	margin: auto;
+	max-width: 400px;
+	width: 100%;
+	padding: 190px 77px 60px;
+	text-align: center;
+	border-radius: 15px;
+	background-color: white;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSJyZ2IoNzAsMTU4LDIzMSkiPjxwYXRoIGQ9Ik00MzcsNzVBMjU2LDI1NiwwLDEsMCw3NSw0MzcsMjU2LDI1NiwwLDAsMCw0MzcsNzVaTTI1Niw0OTEuNkMxMjYuMDksNDkxLjYsMjAuNCwzODUuOTEsMjAuNCwyNTZTMTI2LjA5LDIwLjQsMjU2LDIwLjQsNDkxLjYsMTI2LjA5LDQ5MS42LDI1NiwzODUuOTEsNDkxLjYsMjU2LDQ5MS42WiIvPjxwYXRoIGQ9Ik00MDEuNTksMTQ2LjFhMzUuNzQsMzUuNzQsMCwwLDAtNTAuNDgsMEwyMDAuOTIsMjk2LjI5bC00OS4yMS00OS4yMWEzNS43LDM1LjcsMCwwLDAtNTAuNDgsNTAuNDhMMTc1LjY4LDM3MmEzNS43LDM1LjcsMCwwLDAsNTAuNDgsMEw0MDEuNTksMTk2LjU5QTM1Ljc0LDM1Ljc0LDAsMCwwLDQwMS41OSwxNDYuMVptLTE0LjQyLDM2LjA2TDIxMS43NCwzNTcuNTlhMTUuMywxNS4zLDAsMCwxLTIxLjYzLDBsLTc0LjQ1LTc0LjQ1YTE1LjMsMTUuMywwLDAsMSwyMS42My0yMS42M2w1Ni40Miw1Ni40MmExMC4yLDEwLjIsMCwwLDAsMTQuNDMsMGwxNTcuMzktMTU3LjRhMTUuMywxNS4zLDAsMSwxLDIxLjY0LDIxLjY0WiIvPjxwYXRoIGQ9Ik00NjIuMTMsMjk4LjEzYTEwLjE5LDEwLjE5LDAsMCwwLTEyLjQsNy4zN0ExOTkuNjksMTk5LjY5LDAsMCwxLDI1Niw0NTUuOWExMC4yLDEwLjIsMCwwLDAsMCwyMC40QTIyMC4wOCwyMjAuMDgsMCwwLDAsNDY5LjUsMzEwLjUzLDEwLjIsMTAuMiwwLDAsMCw0NjIuMTMsMjk4LjEzWiIvPjxwYXRoIGQ9Ik00NjYuMSwyNDUuOEExMC4yLDEwLjIsMCwwLDAsNDU1LjksMjU2YzAsMi45Mi0uMDYsNS44Ni0uMTksOC43NGExMC4yLDEwLjIsMCwwLDAsOS43NSwxMC42M2guNDVhMTAuMiwxMC4yLDAsMCwwLDEwLjE4LTkuNzZjLjE0LTMuMTcuMjEtNi40MS4yMS05LjYyQTEwLjIsMTAuMiwwLDAsMCw0NjYuMSwyNDUuOFoiLz48L3N2Zz4=);
+	background-repeat: no-repeat;
+	background-position: center 80px;
+	background-size: 80px auto
+}
+.modal-success-title {
+	display: block;
+	margin-bottom: 20px;
+	font-size: 26px
+}
+.modal-success-text {
+	font-size: 18px;
+	color: rgb(151, 155, 164)
 }
 
 @media(min-width: 768px) {
@@ -1751,7 +1775,7 @@ main {
 	}
 	.glass-collection {
 		float: right;
-		width: 873px;
+		width: calc(100% - 297px);
 		margin-bottom: 40px;
 	}
 	.glass-collection__container {
@@ -2261,5 +2285,11 @@ main {
 	}
 	.contacts__map {
 		margin-bottom: 10px
+	}
+	.modal__modal-success {
+		padding: 160px 20px 40px
+	}
+	.glass-collection__item {
+		width: 280px
 	}
 }
