@@ -1,31 +1,30 @@
-// closest polyfill
-(() => {
-
+(() => { // closest polyfill
 	if (!Element.prototype.closest) {
-
 		Element.prototype.closest = function(css) {
 			var node = this;
-
 			while (node) {
 				if (node.matches(css)) return node;
 				else node = node.parentElement;
 			}
 			return null;
 		};
-	}
-})();
-// matches polyfill
-(() => {
-
+	}})();
+(() => { // matches polyfill
 	if (!Element.prototype.matches) {
-
 		Element.prototype.matches = Element.prototype.matchesSelector ||
 			Element.prototype.webkitMatchesSelector ||
 			Element.prototype.mozMatchesSelector ||
 			Element.prototype.msMatchesSelector
-
-	}
-})();
+	}})();
+(() => { // foreach polyfill
+	if ('NodeList' in window && !NodeList.prototype.forEach) {
+		NodeList.prototype.forEach = function (callback, thisArg) {
+			thisArg = thisArg || window;
+			for (var i = 0; i < this.length; i++) {
+				callback.call(thisArg, this[i], i, this);
+			}
+		};
+	}})();
 
 
 document.addEventListener('click', (e) => {
@@ -47,6 +46,10 @@ document.addEventListener('click', (e) => {
 	else if (target.closest('.go-back')) history.back()
 
 	else if (target.closest('.contacts__btn[data-city]')) toggleContacts(target.closest('.contacts__btn[data-city]'))
+
+	else if (target.closest('.contacts__transit-next')) detailTerritory(target.closest('.contacts__transit-next'), true)
+
+	else if (target.closest('.contacts__transit-prev')) detailTerritory(target.closest('.contacts__transit-prev'), false)
 
 });
 
@@ -168,6 +171,12 @@ function toggleContacts(btn) {
 
 	document.querySelector('.contacts').dataset.city = city
 
+}
+
+function detailTerritory(btn, direct) {
+	const container = btn.parentElement,
+				point = +container.dataset.point;
+	direct ? container.dataset.point = point + 1 : container.dataset.point = point - 1
 }
 
 // console.log();

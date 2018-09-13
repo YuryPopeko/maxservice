@@ -14,13 +14,16 @@ ul:last-child {
 .clearfix::after {
 	content: '';
 	display: table;
-	clear: both;
+	clear: both
 }
 .icon {
 	display: inline-block;
 	width: 1em;
 	height: 1em;
-	fill: currentColor;
+	fill: currentColor
+}
+button {
+	cursor: pointer
 }
 
 .maxservice {
@@ -89,8 +92,7 @@ ul:last-child {
 	transition-timing-function: ease-in-out, ease;
 }
 .with-modal {
-	overflow: hidden;
-	position: fixed;
+	overflow: hidden
 }
 .with-modal .overlay {
 	height: 100vh;
@@ -1681,11 +1683,61 @@ main {
 	}
 	.contacts__transit-img-container {
 		position: relative;
-		height: 480px
+		height: 480px;
+		overflow: hidden
+	}
+	.contacts__transit-next {
+		position: absolute;
+		width: 49px;
+		height: 49px;
+		border: 0;
+		border-radius: 50%;
+		background-color: rgb(243, 18, 18);
+		color: white;
+		font-size: 23px;
+		line-height: 51px
+	}
+	.contacts__transit-prev {
+		border-radius: 20px;
+    height: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+		border: 0;
+		background-color: rgb(65, 75, 101);
+		color: white;
+	}
+	[data-city='brest'][data-point="1"] .contacts__transit-next {
+		top: 27%;
+		left: 42%
+	}
+	[data-city='minsk'][data-point="1"] .contacts__transit-next {
+		top: 24%;
+		left: 8%
+	}
+	[data-city='brest'][data-point="2"] .contacts__transit-next {
+		top: 40%;
+		left: 48%
+	}
+	[data-city='minsk'][data-point="2"] .contacts__transit-next {
+		top: 32%;
+		left: 78%
+	}
+	[data-city='brest'][data-point="3"] .contacts__transit-next {
+		top: 43%;
+		left: 77%
+	}
+	[data-city='brest'][data-point="4"] .contacts__transit-next {
+		top: 36%;
+		left: 81%
+	}
+	.contacts__transit-prev {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		z-index: 1
 	}
 	.contacts__transit-img {
 		width: 100%;
-		height: 100%;
 		object-fit: cover
 	}
 	.contacts__transit-tip {
@@ -1695,9 +1747,25 @@ main {
 		background-color: rgb(65, 75, 101);
 		padding: 20px 30px;
 		width: 100%;
+		min-height: 111px;
 		color: white;
 		font-size: 18px;
 		margin-bottom: 0
+	}
+	[data-point="1"] .contacts__transit-prev,
+	[data-point="1"] .contacts__transit-tip:nth-of-type(n+2),
+	[data-point="1"] .contacts__transit-img:nth-of-type(n+2),
+	[data-point="2"] .contacts__transit-tip:not(:nth-of-type(2)),
+	[data-point="2"] .contacts__transit-img:not(:nth-of-type(2)),
+	[data-city='minsk'][data-point="3"] .contacts__transit-next,
+	[data-point="3"] .contacts__transit-tip:not(:nth-of-type(3)),
+	[data-point="3"] .contacts__transit-img:not(:nth-of-type(3)),
+	[data-point="4"] .contacts__transit-tip:not(:nth-of-type(4)),
+	[data-point="4"] .contacts__transit-img:not(:nth-of-type(4)),
+	[data-city='brest'][data-point="5"] .contacts__transit-next,
+	[data-point="5"] .contacts__transit-tip:not(:nth-of-type(5)),
+	[data-point="5"] .contacts__transit-img:not(:nth-of-type(5)) {
+		display: none
 	}
 }
 
