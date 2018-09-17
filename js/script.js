@@ -80,14 +80,32 @@ function openModal(button) {
 	const modalWindow = document.querySelector('.modal-' + button.dataset.modal);
 
 	document.body.classList.add('with-modal');
-	modalWindow.classList.add('open')
+	modalWindow.classList.add('open');
+
+	document.body.style.paddingRight = `${getScrollBarWidth()}px`;
+
+	function getScrollBarWidth() {
+		const div = document.createElement('div');
+
+		div.style.overflowY = 'scroll';
+		div.style.width = '50px';
+		div.style.height = '50px';
+		div.style.visibility = 'hidden';
+
+		document.body.appendChild(div);
+		const scrollWidth = div.offsetWidth - div.clientWidth;
+		document.body.removeChild(div);
+
+		return scrollWidth
+	}
 
 }
 
 function closeModal() {
 
 	document.querySelector('.modal.open').classList.remove('open');
-	document.body.classList.remove('with-modal')
+	document.body.classList.remove('with-modal');
+	document.body.style.paddingRight = ''
 
 }
 
@@ -108,20 +126,20 @@ function toggleScheme(elem) {
 
 }
 
-var coords = {
-	brest: {lat: 52.14440399999999, lng: 23.661027500000046},
-	minsk: {lat: 53.8495925, lng: 27.67065930000001}
-}
-
 function initMap() {
 
+	initMap.coords = {
+		brest: {lat: 52.14440399999999, lng: 23.661027500000046},
+		minsk: {lat: 53.8495925, lng: 27.67065930000001}
+	}
+
 	const map = new google.maps.Map(document.getElementById('map'), {
-		center: coords.brest,
+		center: initMap.coords.brest,
 		zoom: 12
 	});
 
-	var markerBrest = new google.maps.Marker({position: coords.brest, map: map}),
-			markerMinsk = new google.maps.Marker({position: coords.minsk, map: map});
+	var markerBrest = new google.maps.Marker({position: initMap.coords.brest, map: map}),
+			markerMinsk = new google.maps.Marker({position: initMap.coords.minsk, map: map});
 
 	const mapToggle = document.querySelector('.city-toggle');
 	if (mapToggle) {
@@ -133,7 +151,7 @@ function initMap() {
 
 			if (!btn || btn.classList.contains('city-toggle__btn_active')) return;
 			this.querySelector('.city-toggle__btn_active').classList.remove('city-toggle__btn_active');
-			map.setCenter(window.coords[btn.dataset.city]);
+			map.setCenter(initMap.coords[btn.dataset.city]);
 			btn.classList.add('city-toggle__btn_active')
 
 		})
@@ -176,7 +194,7 @@ function toggleContacts(btn) {
 function detailTerritory(btn, direct) {
 	const container = btn.parentElement,
 				point = +container.dataset.point;
-	direct ? container.dataset.point = point + 1 : container.dataset.point = point - 1
+	container.dataset.point = direct ? point + 1 : point - 1
 }
 
 // console.log();
