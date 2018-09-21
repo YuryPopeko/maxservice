@@ -954,8 +954,15 @@ a[href^=tel] {
 	transition-duration: .2s;
 	transition-timing-function: ease-in-out;
 }
+.glass-collection__price {
+	font-size: 1.25em;
+	color: black
+}
 .glass-collection__item-btn:hover {
 	background-color: var(--background-blue);
+	color: white
+}
+.glass-collection__item-btn:hover .glass-collection__price {
 	color: white
 }
 .pagination {
